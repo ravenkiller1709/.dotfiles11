@@ -197,7 +197,11 @@ bindsym Mod1+m exec --no-startup-id st -e ncmpcpp
 bindsym $mod+Shift+q kill
 
 # powermenu
-bindsym Mod1+x exec --no-startup-id $HOME/.local/bin/sysact
+bindsym Mod1+z exec --no-startup-id $HOME/.local/bin/sysact
+
+# vpn up & down
+bindsym Mod1+v exec --no-startup-id $HOME/.scripts/vpn
+bindsym Mod1+x exec --no-startup-id $HOME/.scripts/vpned
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run -b

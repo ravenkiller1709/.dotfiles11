@@ -74,7 +74,7 @@ font-5 = Font Awesome 6 Brands:pixelsize=10;2
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan battery0 battery1 date powermenu
+modules-right = weather openvpn filesystem xbacklight pulseaudio wlan battery-combined-tlp clock
 
 tray-position = right
 tray-padding = 2
@@ -301,6 +301,7 @@ format-prefix-foreground = ${colors.foreground-alt2}
 
 label = %date% %time%
 
+
 [module/pulseaudio]
 type = internal/pulseaudio
 
@@ -488,8 +489,28 @@ margin-bottom = 5
 
 ; vim:ft=dosini
 
-[module/battery-combined-udev]
+[module/battery-combined-tlp]
 type = custom/script
-exec = ~/.scripts/battery-combined-udev.sh
+exec = ~/.scripts/battery-combined-tlp.sh
 tail = true
+click-left = $HOME/.scripts/batmon
+
+[module/openvpn]
+type = custom/script
+exec = ~/.scripts/vpn-openvpn-status/vpn-openvpn-status.sh
+tail = true
+click-left = $HOME/.scripts/vpn
+click-right = $HOME/.scripts/vpned
+
+[module/clock]
+type = custom/script
+exec = ~/.local/bin/statusbar/clock
+tail = true
+click-left = st -e calcurse
+
+[module/weather]
+type = custom/script
+exec = ~/.local/bin/statusbar/weather
+tail = true
+click-left = st -e less -Srf /home/kim/.local/share/weatherreport
 
