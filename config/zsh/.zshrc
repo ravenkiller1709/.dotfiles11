@@ -29,9 +29,11 @@ promptinit
 ####################################################
 #ALIAS
 ####################################################
+alias dok='cd ~/Dokumenter'
 alias nm=neomutt
 alias r=ranger
 alias v=nvim
+alias cdv='cd ~/.config/nvim && nvim init.vim'
 alias ls='exa -la'
 alias c='cd ~/.config/i3/ && nvim config'
 alias d='cd ~/.local/src/dwm && nvim config.h'
