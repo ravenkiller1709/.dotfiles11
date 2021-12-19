@@ -125,4 +125,4 @@ map <F6> :setlocal spell! spelllang=da<CR>
 map <F7> :setlocal spell! spelllang=en_us<CR>
 
 " open as markdown when the file is named .md
-autocmd BuffEnter,BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufEnter,BufRead,BufNewFile *.md set filetype=markdown
