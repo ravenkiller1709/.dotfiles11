@@ -73,7 +73,7 @@ font-5 = Font Awesome 6 Brands:pixelsize=10;2
 
 
 modules-left = bspwm i3
-modules-center = mpd
+modules-center = player-mpris-tail
 modules-right = weather openvpn filesystem xbacklight pulseaudio wlan battery-combined-tlp clock
 
 tray-position = right
@@ -514,3 +514,7 @@ exec = ~/.local/bin/statusbar/weather
 tail = true
 click-left = st -e less -Srf /home/kim/.local/share/weatherreport
 
+[module/player-mpris-tail]
+type = custom/script
+exec = ~/.scripts/player-mpris-tail.py -f '{icon} {:artist:t18:{artist}:}{:artist: - :}{:t20:{title}:}  %{A1:~/.scripts/player-mpris-tail.py previous:} ⏮ %{A} %{A1:~/.scripts/player-mpris-tail.py play-pause:} {icon-reversed} %{A} %{A1:~/.scripts/player-mpris-tail.py next:} ⏭ %{A}'
+tail = true

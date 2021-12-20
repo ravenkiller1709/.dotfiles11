@@ -89,7 +89,7 @@ set softtabstop=2
 " Expand TABs to spaces
 set expandtab
 
-set autowrite           " Automatically save before commands like :next and :make
+set autowrite           " Automatially save before commands like :next and :make
 set hidden              " Hide buffers when they are abandoned
 
 let g:airline#extensions#tabline#enabled = 1
@@ -126,3 +126,7 @@ map <F7> :setlocal spell! spelllang=en_us<CR>
 
 " open as markdown when the file is named .md
 autocmd BufEnter,BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufWritePost book.md silent !sh build.sh
+autocmd BufWritePost *note-*.md silent !~/.scripts/buildNote %:p
+
+

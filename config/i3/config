@@ -359,3 +359,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 # scrot & gimp - select window or rectangle
 bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
+for_window [title="notetaker"] floating enable
+bindsym $mod+n exec --no-startup-id st -e /home/kim/.scripts/notetaker -t notetaker_window
+bindsym $mod+Shift+n exec --no-startup-id /home/kim/.scripts/mostRecentNote
